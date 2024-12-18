@@ -1,12 +1,28 @@
-class ContaCorrente {
+import { Cliente } from "./Cliente.js";
+
+export class ContaCorrente {
+    static numeroDeContas = 0;
+
     #saldo = 0;
-    constructor(ag) {
+    #cliente;
+    
+    constructor(cliente, ag) {
         this.agencia = ag;
+        this.cliente = cliente;
+        ContaCorrente.numeroDeContas ++;
     }
 
-    getSaldo() {
+    get saldo() {
         return this.#saldo;
     }
+
+    get cliente(){
+        return this.#cliente;
+    }
+    set cliente(novoValor){
+        if (novoValor instanceof Cliente) this.#cliente = novoValor;
+    }
+    
 
     sacar(valor){
         if (this.#saldo < valor) return "Saldo insuficiente";
@@ -20,5 +36,10 @@ class ContaCorrente {
 
         this.#saldo += valor;
         return valor;
+    }
+
+    transferir(valor, contaDestino){
+        const valorSacado = this.sacar(valor);
+        contaDestino.depositar(valorSacado);
     }
 }
