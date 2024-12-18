@@ -1,0 +1,11 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Estudos de POO.js",
+  "main": "Cliente.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Renan",
+  "license": "ISC"
+}

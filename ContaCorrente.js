@@ -1,10 +1,3 @@
-class Cliente {
-    constructor(nome, cpf) {
-        this.name = nome;
-        this.document = cpf;
-    }
-}
-
 class ContaCorrente {
     #saldo = 0;
     constructor(ag) {
