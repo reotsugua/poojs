@@ -7,6 +7,7 @@ export class ContaCorrente extends Conta{
     static numeroDeContas = 0;
 
     // #saldo =0 https://github.com/tc39/proposal-class-fields#private-fields
+    // #saldo =0 https://github.com/tc39/proposal-class-fields#private-fields
 
 
 
